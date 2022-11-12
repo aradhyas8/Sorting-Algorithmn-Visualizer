@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 //Algorithms
 import BubbleSort from './algorithms/BS';
+import InsertionSort from './algorithms/IS'
 //Icons
 import Play from '@material-ui/icons/PlayCircleOutlineRounded';
 import Forwards from '@material-ui/icons/SkipNextRounded';
@@ -18,16 +19,34 @@ class App extends Component {
     colorSteps: [],//Steps for colors
     currentStep: 0, // Current step of algorithm
     count: 10, // Current count (Size of array)
-    delay: 50, //Delay in visualization
-    algorithm: 'Bubble Sort', // Algorithm
+    delay: 200, //Delay in visualization
+    algorithm1: 'Insertion Sort', // Algorithm algo.
+    algorithm2: 'Bubble Sort',
     timeouts:[], // timeouts
 
 
     };
 
+    selectSort =() => {
+      
+
+    }
+    /*
+     function selectSort{
+      if(bubble-sort){
+        algo = bubble.sort
+      }
+     }
+    
+    
+    */
+
     ALGORITHMS = {
       'Bubble Sort': BubbleSort,
+      'Insertion Sort': InsertionSort,
     }
+
+    
 
 
     generateRandomNumber = (min, max) => { // To generate Random Bars min and max of array ..?..
@@ -40,14 +59,19 @@ class App extends Component {
       this.generateRandomArray();
     }
 
+    
+    sortSelect() {
+      let algo = this.state.algorithm1;
+      
+    }
 
     generateSteps =()=> {
       let array = this.state.array.slice();
       let steps = this.state.arraySteps.slice();
       let colorSteps = this.state.colorSteps.slice();
 
-
-      this.ALGORITHMS[this.state.algorithm](array, 0, steps, colorSteps);
+      
+      this.ALGORITHMS[this.state.algorithm2](array, 0, steps, colorSteps); // this.state.algo passes algo at top in state.
 
       this.setState({
         arraySteps: steps,
@@ -184,7 +208,9 @@ class App extends Component {
     }
 
     return (<div className = "app">
+      <div className='backgroundgradient'>
       <div className='frame'>
+      
       <div className='barsDiv container card'>{bars}</div>
       </div>
       <div className='control-panel'>
@@ -198,7 +224,15 @@ class App extends Component {
         </button>
         </div>
       </div>
+      <div className='sort-buttons'>
+        <button className='bubble-sort'>Bubble Sort</button>
+        <button className='insertion-sort'>Insertion Sort</button>
+        <button className='selection-sort'>Selection Sort</button>
+      </div>
+      
       <div className='panel'></div>
+      </div>
+      
       </div>) ;
   }
 }

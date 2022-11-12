@@ -19,9 +19,10 @@ function Bar ({index, length, color, changeArray}) {
 
     
 
-    const colors = [['rgba(61, 90, 241, 0.5)','rgba(61, 90, 241, 0.5)'], // Color of Bars
-                    ['rgba(255, 48, 79, 1)','rgba(255, 48, 79, 0.5)'],
-                    ['rgba(131, 232, 90, 1)','rgba(131, 232, 90, 0.2)'] ]
+    const colors = [['rgba(104, 224, 207, 1)','rgba(104, 224, 207, 0.5)'], // Color of Bars
+                    ['rgba(247, 112, 98, 1)','rgba(247, 112, 98, 0.5)'],
+                    ['rgba(168, 224, 99, 1)','rgba(168, 224, 99, 0.2)'],
+                    ['rgba(235, 123, 19, 0.5)','rgba(235, 123, 19, 0.2)'] ]
 
 
 
